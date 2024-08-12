@@ -38,7 +38,7 @@ e.g. `/nobackup/<lab-name>/users/<user-name>/mambaforge`
 
 # Start RStudio Server
 - `sbatch rstudio-server/submit.sh`
-- Open the link from log-file in your browser, e.g. `http://dYYY.int.cemm.at:$XXXX`
+- Open the link from log-file in your browser, e.g. `http://dYYY.int.cemm.at:XXXX`
 
 
 
