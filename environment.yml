@@ -1,0 +1,6 @@
+name: rstudio-server
+channels:
+    - conda-forge
+dependencies:
+    - r-base=4.4.1  # You can probably change this to a specific version you need
+    - python=3.11
