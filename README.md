@@ -7,7 +7,7 @@
 
 
 ## Clone Repo
-- `git clone https://github.com/lutrarutra/rstudio-server-cemm`
+- `git clone https://github.com/lutrarutra/rstudio-server-cemm rstudio-server`
 
 ## Conda Environment
 
