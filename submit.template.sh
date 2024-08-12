@@ -13,7 +13,7 @@
 PASSWORD=password
 CONTAINER="/nobackup/<your lab dir>/users/<your user name>/containers/rstudio_latest.sif"
 
-mkdir -p dirname $CONTAINER
+mkdir -p $(dirname $CONTAINER)
 
 module purge
 module load singularity
@@ -60,6 +60,7 @@ singularity exec \
     --bind /nobackup:/nobackup \
 	--bind ~/rstudio-data:/data \
 	--env CONDA_PREFIX=$CONDA_PREFIX \
+    --env OMP_NUM_THREADS=$OMP_NUM_THREADS \
 	--env RSTUDIO_WHICH_R=$R_BIN \
 	--env RETICULATE_PYTHON=$PY_BIN \
 	--env PASSWORD=$PASSWORD \
