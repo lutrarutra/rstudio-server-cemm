@@ -6,8 +6,8 @@
 #SBATCH --qos=interactiveq
 #SBATCH --time 12:00:00
 #SBATCH --job-name rstudio-server
-#SBATCH --chdir <your preferred working directory,  e.g. '~/documents'>/rstudio-server
-#SBATCH --output <your preferred log dir>/rstudio-server.log
+#SBATCH --chdir <repository path>
+#SBATCH --output rstudio-server.log
 
 # Change Parameters
 PASSWORD=password
