@@ -38,6 +38,7 @@ e.g. `/nobackup/<lab-name>/users/<user-name>/mambaforge`
 # Start RStudio Server
 - `sbatch rstudio-server/submit.sh`
 - Open the link from log-file `rsutdio-server.log` (should be in repo folder) in your browser, e.g. `http://dYYY.int.cemm.at:XXXX`
+- When you run for the first time, it will take couple minutes to download the container and start the rstudio server
 
 
 
