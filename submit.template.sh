@@ -19,7 +19,7 @@ module purge
 module load singularity
 
 source ~/.bashrc
-conda activate rstudio-server
+conda activate rstudio-server  # or any other conda env with R language installed
 
 export OMP_NUM_THREADS=${SLURM_JOB_CPUS_PER_NODE}
 
@@ -56,6 +56,8 @@ singularity exec \
 	--bind $RSTUDIO_TMP/local-share-rstudio:/home/rstudio/.local/share/rstudio \
 	--bind ${CONDA_PREFIX}:${CONDA_PREFIX} \
 	--bind $HOME/.config/rstudio:/home/rstudio/.config/rstudio \
+    --bind /research:/research \
+    --bind /nobackup:/nobackup \
 	--bind ~/rstudio-data:/data \
 	--env CONDA_PREFIX=$CONDA_PREFIX \
 	--env RSTUDIO_WHICH_R=$R_BIN \

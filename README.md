@@ -11,7 +11,7 @@
 
 ## Conda Environment
 
-### 0. (Optional) Install Mamba if you don't have Conda/Mamba
+### 0. (Optional) Install Mamba if you don't have Conda/Mamba installed.
 - Download installer script
     - `wget https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh`
 - Install somewhere on nobackup (it will ask after you have agreed for terms and conditions),
@@ -22,7 +22,9 @@ e.g. `/nobackup/<lab-name>/users/<user-name>/mambaforge`
     - `mamba init`
     - `source ~/.bashrc` to finalize mamba -> you should see `(base)` in front of your prompt
 
-### 1. Create conda environment
+### 1. You can your existing conda environment with R:
+- change line `conda activate rstudio-server` in `rstudio-server/submit.sh` to `conda activate <your env name>`
+### or Create new Conda environment
 - Create conda/mamba environment
     - `conda env create -f rstudio-server/environment.yml`
     or
