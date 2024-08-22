@@ -31,6 +31,7 @@ fi
 
 PORT=$(shuf -i8000-9999 -n1)
 USER=$(whoami)
+PASSWORD=${PASSWORD:-password}
 TMPDIR=${TMPDIR:-tmp}
 
 RSTUDIO_TMP="${TMPDIR}/$(echo -n ${CONDA_PREFIX} | md5sum | awk '{print $1}')"
@@ -65,6 +66,7 @@ singularity exec --cleanenv \
     --bind /nobackup:/nobackup \
 	--env RETICULATE_PYTHON=${CONDA_PREFIX}/bin/python \
 	--env PASSWORD=${PASSWORD} \
+    --env USER=${USER} \
     --env OMP_NUM_THREADS=${NUM_CPUS} \
 	${CONTAINER_PATH} \
     rserver \
@@ -76,6 +78,6 @@ singularity exec --cleanenv \
         --auth-stay-signed-in-days=30  \
         --auth-none=0 \
         --auth-pam-helper-path=pam-helper \
-        --server-user=${USER}
+        --server-user $USER
 
 
